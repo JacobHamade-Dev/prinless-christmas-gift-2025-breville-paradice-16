@@ -1237,7 +1237,7 @@
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                             <div class="bg-white bg-opacity-20 p-4 rounded-lg">
                                 <h4 class="font-bold mb-2 text-lg">✅ YES (Top Shelf) <span class="sparkle-static">✨</span></h4>
-                                <ul class="space-y-2 opacity-90 list-disc pl-5">
+                                <ul class="space-y-2 opacity-90 list-disc pl-5" style="color: #8B4A6B;">
                                     <li>Bowl & Lid (Avoid "Sanitize" cycle, little one)</li>
                                     <li>All Pushers</li>
                                     <li>S-Blade, Dough Blade, Mini Blade</li>
@@ -1247,7 +1247,7 @@
                             </div>
                             <div class="bg-white bg-opacity-20 p-4 rounded-lg">
                                 <h4 class="font-bold mb-2 text-lg">🛑 NO (Hand Wash Only) <span class="sparkle-static">✨</span></h4>
-                                <ul class="space-y-2 opacity-90 list-disc pl-5">
+                                <ul class="space-y-2 opacity-90 list-disc pl-5" style="color: #8B4A6B;">
                                     <li><strong>The Dicing Gearbox</strong> (Greased gears inside, little one)</li>
                                     <li>The Motor Base</li>
                                 </ul>
@@ -1298,7 +1298,7 @@
         // --- RENDER HELPERS ---
 
         function renderAccordion(title, content) {
-            const id = title.replace(/\s+/g, '');
+            const id = title.replace(/[^a-zA-Z0-9]/g, '');
             return `
                 <div class="rounded-lg bg-white overflow-hidden shadow-lg" style="border: 2px solid #FFB6C1; box-shadow: 0 4px 15px rgba(255, 182, 193, 0.3);">
                     <button onclick="toggleAccordion('${id}')" class="w-full px-6 py-4 text-left flex justify-between items-center transition-colors" style="color: #D81B60; hover:background: #FFE4E9;">
