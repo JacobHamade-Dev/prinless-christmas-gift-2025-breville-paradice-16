@@ -34,8 +34,9 @@
                     #FFE4E9 300deg,
                     #FFF8FA 360deg);
             background-size: 260% 260%, 260% 260%, 210% 210%, 310% 310%, 310% 310%, 100% 100%;
-            animation: gradientShift 28s cubic-bezier(0.4, 0, 0.2, 1) infinite, radialPulse 20s ease-in-out infinite;
+            animation: gradientShift 35s ease-in-out infinite;
             background-attachment: fixed;
+            will-change: auto;
             color: #7a3d5c;
             position: relative;
             overflow-x: hidden;
@@ -50,10 +51,7 @@
             100% { background-position: 0% 50%, 100% 50%, 50% 0%, 0% 50%, 100% 100%, 0% 0%; }
         }
 
-        @keyframes radialPulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.8; }
-        }
+
 
         body::before {
             content: '';
@@ -88,7 +86,8 @@
                 0 8px 24px rgba(255, 182, 193, 0.4),
                 0 0 30px rgba(255, 105, 180, 0.3),
                 0 1px 3px rgba(255, 20, 147, 0.2);
-            animation: gentleGlow 5s ease-in-out infinite alternate;
+            animation: gentleGlow 6s ease-in-out infinite alternate;
+            will-change: auto;
             letter-spacing: -0.02em;
             line-height: 1.2;
         }
@@ -142,8 +141,8 @@
             font-size: 20px;
             animation: sparkleFloat 8s infinite ease-in-out;
             opacity: 0;
-            filter: drop-shadow(0 0 8px rgba(255, 182, 193, 0.8));
-            will-change: transform, opacity;
+            filter: drop-shadow(0 0 6px rgba(255, 182, 193, 0.6));
+            will-change: auto;
         }
 
         /* Smooth Page Transitions */
@@ -173,10 +172,9 @@
 
         /* Enhanced Button Interactions with Ripple */
         button, .filter-btn {
-            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            transition: transform 0.25s ease-out, box-shadow 0.25s ease-out, background-color 0.25s ease-out;
             position: relative;
             overflow: hidden;
-            transform-style: preserve-3d;
         }
 
         button::after, .filter-btn::after {
@@ -415,9 +413,7 @@
             backdrop-filter: blur(25px) saturate(200%);
             -webkit-backdrop-filter: blur(25px) saturate(200%);
             border: 2px solid rgba(255, 182, 193, 0.35);
-            transform-style: preserve-3d;
-            perspective: 1200px;
-            will-change: transform;
+            contain: layout style paint;
         }
         .ingredient-card:hover {
             transform: translateY(-12px) scale(1.03) rotateX(3deg) rotateY(-1deg);
@@ -852,7 +848,7 @@
                         For My Little Koala Bear Princess <span class="sparkle-static">🐨✨</span>
                     </span>
                 </div>
-                <div class="flex items-center space-x-2 overflow-x-auto">
+                <div class="flex items-center space-x-2">
                     <button onclick="switchView('dashboard')" class="nav-btn active px-4 py-2 rounded-md text-sm font-medium transition-colors">Start Here, Little One <span class="sparkle-static">✨</span></button>
                     <button onclick="switchView('ingredients')" class="nav-btn px-4 py-2 rounded-md text-sm font-medium transition-colors" style="color: #8B4A6B;">Your Ingredient Guide <span class="sparkle-static">✨</span></button>
                     <button onclick="switchView('technique')" class="nav-btn px-4 py-2 rounded-md text-sm font-medium transition-colors" style="color: #8B4A6B;">How to Use It <span class="sparkle-static">✨</span></button>
@@ -1029,17 +1025,17 @@
                             <div class="text-center bg-white bg-opacity-20 p-4 rounded-lg">
                                 <div class="text-4xl mb-2">💅</div>
                                 <h3 class="font-bold mb-2">The Nail Test</h3>
-                                <p class="text-sm opacity-90">Can't pierce it with a fingernail, little one? <strong>PAR-COOK IT.</strong> (Sweet Potato, Rutabaga). <span class="sparkle-static">✨</span></p>
+                                <p class="text-sm text-zinc-600 opacity-90">Can't pierce it with a fingernail, little one? <strong>PAR-COOK IT.</strong> (Sweet Potato, Rutabaga). <span class="sparkle-static">✨</span></p>
                             </div>
                             <div class="text-center bg-white bg-opacity-20 p-4 rounded-lg">
                                 <div class="text-4xl mb-2">👍</div>
                                 <h3 class="font-bold mb-2">The Thumb Test</h3>
-                                <p class="text-sm opacity-90">Can you squish it with your thumb? <strong>TOO SOFT.</strong> (Ripe Tomato, Peach). <span class="sparkle-static">✨</span></p>
+                                <p class="text-sm text-zinc-600 opacity-90">Can you squish it with your thumb? <strong>TOO SOFT.</strong> (Ripe Tomato, Peach). <span class="sparkle-static">✨</span></p>
                             </div>
                             <div class="text-center bg-white bg-opacity-20 p-4 rounded-lg">
                                 <div class="text-4xl mb-2">🌪️</div>
                                 <h3 class="font-bold mb-2">The Distributor</h3>
-                                <p class="text-sm opacity-90">Dicing more than 5 cups? Use the fan blade or cubes will pile up and jam, little koala bear. <span class="sparkle-static">✨</span></p>
+                                <p class="text-sm text-zinc-600 opacity-90">Dicing more than 5 cups? Use the fan blade or cubes will pile up and jam, little koala bear. <span class="sparkle-static">✨</span></p>
                             </div>
                         </div>
                     </section>
